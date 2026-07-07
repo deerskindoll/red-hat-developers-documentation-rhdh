@@ -1,0 +1,16 @@
+:_mod-docs-content-type: CONCEPT
+
+[id="registry-mirroring-advanced-features_{context}"]
+= Registry mirroring advanced features
+
+[role="_abstract"]
+The plugin mirroring script includes advanced features for path compatibility.
+
+== Registry path compatibility
+
+The script automatically handles different registry path formats:
+
+* 2-level paths: `registry.io/namespace/image` (for example, `quay.io/rhdh/plugin`)
+* 3-level paths: `registry.io/org/sub/image` (for example, `ghcr.io/redhat-developer/rhdh-plugin-export-overlays/plugin`)
+
+For {ocp} internal registries, which only support 2-level paths, the script automatically flattens 3-level paths to 2-level paths by keeping only the last two path elements.
